@@ -17,6 +17,7 @@ from dj_database_url import parse as dburl
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+RAINBOWTESTS_HIGHLIGHT_PATH = BASE_DIR
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
@@ -115,3 +116,9 @@ EMAIL_PORT = config('EMAIL_PORT', cast=int)
 EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool)
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+
+# Colored Tests
+
+RAINBOWTESTS_HIGHLIGHT_PATH = BASE_DIR
+TEST_RUNNER = 'rainbowtests.test.runner.RainbowDiscoverRunner'
+RAINBOWTESTS_SHOW_MESSAGES = False
